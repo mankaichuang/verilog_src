@@ -16,3 +16,5 @@
 7、7_touch_led 触摸按键控制LED
 
 8、8_pwm_led 通过PWM实现呼吸灯效果
+
+9、9_static_seg静态数码管实验
