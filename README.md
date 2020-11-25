@@ -10,3 +10,5 @@
 4、4_key_debounce 按键去抖方法及仿真
 
 5、5_key_beep 按键控制蜂鸣器
+
+6、6_edge_detection边沿监测方法
