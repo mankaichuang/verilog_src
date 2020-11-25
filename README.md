@@ -12,3 +12,5 @@
 5、5_key_beep 按键控制蜂鸣器
 
 6、6_edge_detection边沿监测方法
+
+7、7_touch_led 触摸按键控制LED
