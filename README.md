@@ -20,3 +20,5 @@
 9、9_static_seg静态数码管实验
 
 10、10_seg_led动态数码管实验，并且可以通过key控制数码管显示效果
+
+11、11_ip_clk_wiz MMCM/PLL实验，用ip核实现MMCM/PLL并仿真
