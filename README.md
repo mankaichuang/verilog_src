@@ -22,3 +22,5 @@
 10、10_seg_led动态数码管实验，并且可以通过key控制数码管显示效果
 
 11、11_ip_clk_wiz MMCM/PLL实验，用ip核实现MMCM/PLL并仿真
+
+12、12_ip_ram 用ip核实现RAM，并进行读写测试
