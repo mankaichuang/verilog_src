@@ -27,29 +27,40 @@ assign ram_we = (rw_cnt <= 6'd31) ? 1'b1 : 1'b0;
 always @(posedge sys_clk or negedge sys_rst_n) begin
     if(!sys_rst_n)
         rw_cnt <= 6'b0;
-    else if(rw_cnt == 6'd63)
-        rw_cnt <= 6'b0;
-    else
-        rw_cnt <= rw_cnt + 6'b1;
+    else begin
+        if(ram_en) begin
+            if(rw_cnt == 6'd63)
+                rw_cnt <= 6'b0;
+            else
+                rw_cnt <= rw_cnt + 6'b1;
+        end
+    end
 end
 
 always @(posedge sys_clk or negedge sys_rst_n) begin
     if(!sys_rst_n)
         ram_addr <= 5'b0;
-    else if(ram_addr == 5'd31)
-        ram_addr <= 5'b0;
-    else
-        ram_addr <= ram_addr + 5'b1;
+    else begin
+        if(ram_en) begin
+            if(ram_addr == 5'd31)
+                ram_addr <= 5'b0;
+            else
+                ram_addr <= ram_addr + 5'b1;
+        end
+    end
 end
 
 always @(posedge sys_clk or negedge sys_rst_n) begin
     if(!sys_rst_n)
         ram_wdata <= 8'b0;
-    else if(rw_cnt <= 5'd31)
-        ram_wdata <= ram_wdata + 8'b1;
-    else
-        ram_wdata <= 8'b0;
-        
+    else begin
+        if(ram_en) begin
+            if(rw_cnt < 5'd31)
+                ram_wdata <= ram_wdata + 8'b1;
+            else
+                ram_wdata <= 8'b0;
+        end
+    end        
 end
 
 endmodule

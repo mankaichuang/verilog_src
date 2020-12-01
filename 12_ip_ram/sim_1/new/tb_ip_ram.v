@@ -17,9 +17,9 @@ reg sys_rst_n;
 always #10 sys_clk = ~sys_clk;
 
 initial begin
-        sys_clk         = 1'b0;
-        sys_rst_n       = 1'b0;
-    #20 sys_rst_n       = 1'b1;
+        sys_clk         <= 1'b0;
+        sys_rst_n       <= 1'b0;
+    #30 sys_rst_n       <= 1'b1;
 end
 
 
