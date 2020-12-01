@@ -24,3 +24,5 @@
 11、11_ip_clk_wiz MMCM/PLL实验，用ip核实现MMCM/PLL并仿真
 
 12、12_ip_ram 用ip核实现RAM，并进行读写测试
+
+13、13_ip_fifo ip核的fifo实验
