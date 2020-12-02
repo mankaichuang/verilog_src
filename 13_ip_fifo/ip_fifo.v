@@ -24,7 +24,6 @@ wire full;
 wire empty;
 wire [7:0] rd_data_count;
 wire [7:0] wr_data_count;
-wire sys_clk;
 
 fifo_write u_fifo_write(
     .sys_clk            (sys_clk),
