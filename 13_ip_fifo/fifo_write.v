@@ -60,6 +60,7 @@ always @(posedge sys_clk or negedge sys_rst_n) begin
                 if(delay_cnt == 4'd10)begin //延时了10个时钟周期
                     write_state <= 2'd2;    //进入2状态，2状态为写状态
                     fifo_wr_en <= 1'b1;     //打开写使能
+                    delay_cnt <= 4'd0; 
                 end
                 else begin
                     delay_cnt <= delay_cnt + 1'b1;

@@ -24,7 +24,7 @@ wire full;
 wire empty;
 wire [7:0] rd_data_count;
 wire [7:0] wr_data_count;
-
+wire sys_clk;
 
 fifo_write u_fifo_write(
     .sys_clk            (sys_clk),
@@ -62,6 +62,24 @@ fifo_generator_0 fifo_instance (
   .almost_empty(almost_empty),    // output wire almost_empty
   .rd_data_count(rd_data_count),  // output wire [7 : 0] rd_data_count
   .wr_data_count(wr_data_count)  // output wire [7 : 0] wr_data_count
+);
+
+ila_0 ila_instance (
+	.clk(sys_clk), // input wire clk
+
+
+	.probe0(sys_clk), // input wire [0:0]  probe0  
+	.probe1(sys_rst_n), // input wire [0:0]  probe1 
+	.probe2(almost_empty), // input wire [0:0]  probe2 
+	.probe3(empty), // input wire [0:0]  probe3 
+	.probe4(fifo_wr_en), // input wire [0:0]  probe4 
+	.probe5(fifo_wdata), // input wire [7:0]  probe5 
+	.probe6(wr_data_count), // input wire [7:0]  probe6 
+	.probe7(almost_full), // input wire [0:0]  probe7 
+	.probe8(full), // input wire [0:0]  probe8 
+	.probe9(fifo_rd_en), // input wire [0:0]  probe9 
+	.probe10(fifo_rdata), // input wire [7:0]  probe10 
+	.probe11(rd_data_count) // input wire [7:0]  probe11
 );
 
 endmodule
